@@ -9,7 +9,7 @@ def products_materials(product_id, quantity):
     products = Product_Materials.objects.filter(product_id=product_id)
     result = {}
     for item in products:
-        result[item.material_id.id] = item.material_qty * quantity
+        result[item.material_id.id] = item.material_qty * int(quantity)
     return result
 
 # Malumotlar bazasidagi ma'lumotlarni list ko'rinishiga o'tkazib beradigan 'db_to_list' nomli funksiya tuzamiz.
